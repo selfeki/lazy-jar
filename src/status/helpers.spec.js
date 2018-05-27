@@ -9,10 +9,12 @@ describe('status helpers', function () {
     describe('occuredWithinCurrentWeek', function () {
         it('should return true given a date within the current week', function () {
             const date_today = moment().toDate();
-            assert(occuredWithinCurrentWeek(moment(), date_today));
+            const now = moment();
+            assert(occuredWithinCurrentWeek(now, date_today));
         });
         it('should return false given a date not within the current week', function () {
-            assert(!occuredWithinCurrentWeek(moment(), '20170301'))
+            const now = moment();
+            assert(!occuredWithinCurrentWeek(now, '20170301'))
         });
     })
     describe('occuredWithinCurrentMonth', function () {

@@ -51,14 +51,14 @@ module.exports = (logProvider, logger, occuredWithinCurrentWeek, occuredWithinCu
       const now = moment();
       switch(action) {
         case 'Participated':
-          status.participated++
-          if (occuredWithinCurrentWeek(now, date)) status.participatedCurrentWeek++
-          if (occuredWithinCurrentMonth(now, date)) status.participatedCurrentMonth++
+          status.participated+= 1;
+          if (occuredWithinCurrentWeek(now, date)) status.participatedCurrentWeek+= 1;
+          if (occuredWithinCurrentMonth(now, date)) status.participatedCurrentMonth+= 1;
           return
         case 'Notified':
-          status.notified++
-          if (occuredWithinCurrentWeek(now, date)) status.notifiedCurrentWeek++
-          if (occuredWithinCurrentMonth(now, date)) status.notifiedCurrentMonth++
+          status.notified+= 1;
+          if (occuredWithinCurrentWeek(now, date)) status.notifiedCurrentWeek+= 1;
+          if (occuredWithinCurrentMonth(now, date)) status.notifiedCurrentMonth+= 1;
           return
       }
     });
